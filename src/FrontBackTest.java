@@ -14,12 +14,13 @@ public class FrontBackTest {
         System.out.println(frontBack.frontBack("code"));
         System.out.println(frontBack.frontBack("a"));
         System.out.println(frontBack.frontBack("ab"));
+        System.out.println(frontBack.frontBack(null));
     }
 }
 
 class FrontBack {
     public String frontBack(String str) {
-        return !str.isEmpty() && str.length() > 1 ?
+        return str != null && str.length() > 1 ?
                 str.charAt(str.length() - 1) + str.substring(1, str.length() - 1) + str.charAt(0) : str;
     }
 }
